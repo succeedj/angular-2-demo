@@ -1,0 +1,9 @@
+<div>
+  <h1>Available Houses</h1>
+  <hr>
+  <div class="row">
+    <div *ngFor="let house of houses">
+      <app-house-snapshot [house]="house"></app-house-snapshot><!-- passing house to house-snapshot component -->
+    </div>
+  </div>
+</div>

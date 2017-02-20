@@ -1,0 +1,11 @@
+<div [routerLink]="['/houses', house.id]" class="snapshot">
+  <h2>{{house.description}}</h2>
+  <div>Description: {{house.description}}</div>
+  <div>Type: {{house.type}}</div>
+  <div>Price: {{house.price}}</div>
+  <div>
+    <span>Location: {{house.location.address}}</span>
+    <span>City: {{house.city}}</span>
+    <span>State: {{house.state}}</span>
+  </div>
+</div>

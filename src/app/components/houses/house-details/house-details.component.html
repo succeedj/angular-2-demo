@@ -1,0 +1,37 @@
+<div class="container">
+  <img [src]="house?.imageUrl">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{house?.description}} </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div><strong>Type:</strong> {{house?.type}}</div>
+      <div><strong>Price:</strong> ${{house?.price}}</div>
+    </div>
+    <div class="col-md-6">
+      <address>
+        <strong>Address:</strong><br />
+        {{house?.location?.address}}<br />
+        {{house?.location?.city}}, {{house?.location?.state}}
+      </address>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-2">
+      <h3 style="margin:0">Realtors</h3>
+    </div>
+    <div class="col-md-2">
+      <a (click)="addRealtor()">Add Realtor</a>
+    </div>
+  </div>
+
+  <app-realtor-list *ngIf="!addMode" [realtors]="house?.realtors"></app-realtor-list>
+  <app-add-realtor *ngIf="addMode" (saveNewRealtor)="saveNewRealtor($event)" (cancelAddSession)="cancelAddRealtor()"></app-add-realtor>
+</div>

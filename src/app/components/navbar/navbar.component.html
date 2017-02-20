@@ -1,0 +1,37 @@
+<div class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >Angular Houses</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a [routerLink]="['/houses']">Houses</a>
+        </li>
+        <li><a [routerLink]="['/houses/new']">Add House</a></li>
+      </ul>
+      <div class="navbar-header navbar-right">
+        <ul class="nav navbar-nav">
+          <li>
+          </li>
+        </ul>
+      </div>
+      <form id="searchForm" (ngSubmit)="searchRealtors(searchTerm)" class="navbar-form navbar-right">
+        <div class="form-group">
+          <input  [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Realtors" >
+        </div>
+        <button class="btn btn-default" appModal="searchResults">
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<result-modal elementId="searchResults" title="Results Found">
+  <div class="list-group">
+    <a *ngFor="let realtor of foundRealtors"
+       [routerLink]="['/houses', realtor.houseid]">{{realtor.name}}</a>
+  </div>
+</result-modal>
