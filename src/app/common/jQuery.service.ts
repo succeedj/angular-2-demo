@@ -1,3 +1,3 @@
-/**
- * Created by succeedjabangwe on 2/19/17.
- */
+import { OpaqueToken } from '@angular/core';
+
+export let JQ_TOKEN = new OpaqueToken('jQuery');
