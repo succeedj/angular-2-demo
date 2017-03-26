@@ -5,7 +5,7 @@ import {Observable, Subject} from "rxjs";
 @Injectable()
 export class HouseService {
 
-  // test change
+  // test new branch
   getHouses(): Observable<House[]> {
     let subject = new Subject<House[]>(); // a subject is a type of an observable which can be subscribed to
     setTimeout(() => { // setTimeout to simulate an api call
